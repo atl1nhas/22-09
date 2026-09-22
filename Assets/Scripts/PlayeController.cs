@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using TMPro;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlatformController : MonoBehaviour
@@ -167,4 +168,13 @@ public class PlatformController : MonoBehaviour
         coinCounter+=1;
         coinText.text = coinCounter.ToString();
     }
+    public void Die(){
+        Destroy(gameObject);
+        ReloadCurrentScene();
+    }
+    public void ReloadCurrentScene()
+  {
+    string currentSceneName = SceneManager.GetActiveScene().name;
+    SceneManager.LoadSceneAsync(currentSceneName);
+  }
 }
