@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "08-09-2026.slnx"
+    "dotnet.defaultSolution": "22-09.slnx"
 }
