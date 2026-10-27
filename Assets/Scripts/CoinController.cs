@@ -2,17 +2,16 @@ using UnityEngine;
 
 public class coincontroller : MonoBehaviour
 {
-    private bool coletada = false;
 
-   private void OnTriggerEnter2D(Collider2D other)
-   {
-    if (coletada) return;
-
-    if (other.CompareTag("Player"))
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        coletada = true;
-        other.gameObject.SendMessage("ChangeTextCoin");
-        Destroy(gameObject);
+
+
+        if (other.CompareTag("Player"))
+        {
+
+            other.gameObject.SendMessage("ChangeTextCoin");
+            Destroy(gameObject);
+        }
     }
-   }
 }
